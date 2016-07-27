@@ -9,7 +9,7 @@
 #import "ICEWebView.h"
 #import <WebKit/WKWebView.h>
 
-static void *ZLCWebBrowserContext = &ZLCWebBrowserContext;
+static void *ICEWebBrowserContext = &ICEWebBrowserContext;
 
 
 @interface ICEWebView ()<WKNavigationDelegate , WKUIDelegate, UIWebViewDelegate>
@@ -47,7 +47,7 @@ static void *ZLCWebBrowserContext = &ZLCWebBrowserContext;
             
             [self addSubview:self.wkWebView];
             self.wkWebView.scrollView.bounces = NO;
-            [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:ZLCWebBrowserContext];
+            [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:ICEWebBrowserContext];
         }
         else  {
             
