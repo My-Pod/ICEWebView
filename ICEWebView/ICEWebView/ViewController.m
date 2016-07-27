@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ICEWebView.h"
-@interface ViewController ()
+@interface ViewController ()<ICEWebViewDelegate>
 
 @end
 
@@ -18,7 +18,7 @@
     [super viewDidLoad];
     ICEWebView *webView = [[ICEWebView alloc] initWithFrame:self.view.bounds];
     [webView loadURLString:@"https://www.baidu.com/"];
-    
+    webView.delegate = self;
     [webView title:^(NSString *title) {
         self.navigationController.title = title;
     }];
@@ -30,6 +30,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)ice_webView:(ICEWebView *)webView didFailToLoadURL:(NSURL *)URL error:(NSError *)error{
+    NSLog(@"失败");
+}
+- (void)ice_webView:(ICEWebView *)webView didFinishLoadingURL:(NSURL *)URL{
+    NSLog(@"结束");
 }
 
 @end

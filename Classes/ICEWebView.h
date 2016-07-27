@@ -12,7 +12,7 @@
 
 @class ICEWebView;
 @protocol ICEWebViewDelegate <NSObject>
-
+@optional
 - (void)ice_webView:(ICEWebView *)webView didFinishLoadingURL:(NSURL *)URL;
 
 - (void)ice_webView:(ICEWebView *)webView didFailToLoadURL:(NSURL *)URL error:(NSError *)error;
