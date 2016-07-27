@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'ICEWebView'
-s.version          = '1.0.0'
+s.version          = '1.0.1'
 s.summary          = '对WebView的封装'
 s.description      = <<-DESC
 TODO: 对UIWebView 和 WKWebView 的整合封装
