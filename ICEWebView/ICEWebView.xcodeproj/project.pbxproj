@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17352EA01D489E8200DF9192 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352E9F1D489E8200DF9192 /* main.m */; };
+		17352EA31D489E8200DF9192 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352EA21D489E8200DF9192 /* AppDelegate.m */; };
+		17352EA61D489E8200DF9192 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352EA51D489E8200DF9192 /* ViewController.m */; };
+		17352EA91D489E8200DF9192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17352EA71D489E8200DF9192 /* Main.storyboard */; };
+		17352EAB1D489E8200DF9192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17352EAA1D489E8200DF9192 /* Assets.xcassets */; };
+		17352EAE1D489E8200DF9192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17352EAC1D489E8200DF9192 /* LaunchScreen.storyboard */; };
+		17352EB91D489E8200DF9192 /* ICEWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352EB81D489E8200DF9192 /* ICEWebViewTests.m */; };
+		17352EC41D489E8200DF9192 /* ICEWebViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352EC31D489E8200DF9192 /* ICEWebViewUITests.m */; };
+		17352ED71D489F6F00DF9192 /* ICEWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352ED31D489F6F00DF9192 /* ICEWebView.m */; };
+		17352ED81D489F6F00DF9192 /* ICEWebView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 17352ED41D489F6F00DF9192 /* ICEWebView.podspec */; };
+		17352ED91D489F6F00DF9192 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 17352ED51D489F6F00DF9192 /* LICENSE */; };
+		17352EDA1D489F6F00DF9192 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 17352ED61D489F6F00DF9192 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17352EB51D489E8200DF9192 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17352E931D489E8200DF9192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17352E9A1D489E8200DF9192;
+			remoteInfo = ICEWebView;
+		};
+		17352EC01D489E8200DF9192 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17352E931D489E8200DF9192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17352E9A1D489E8200DF9192;
+			remoteInfo = ICEWebView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17352E9B1D489E8200DF9192 /* ICEWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICEWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17352E9F1D489E8200DF9192 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		17352EA11D489E8200DF9192 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		17352EA21D489E8200DF9192 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		17352EA41D489E8200DF9192 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		17352EA51D489E8200DF9192 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		17352EA81D489E8200DF9192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17352EAA1D489E8200DF9192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17352EAD1D489E8200DF9192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17352EAF1D489E8200DF9192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17352EB41D489E8200DF9192 /* ICEWebViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICEWebViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17352EB81D489E8200DF9192 /* ICEWebViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICEWebViewTests.m; sourceTree = "<group>"; };
+		17352EBA1D489E8200DF9192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17352EBF1D489E8200DF9192 /* ICEWebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICEWebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17352EC31D489E8200DF9192 /* ICEWebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICEWebViewUITests.m; sourceTree = "<group>"; };
+		17352EC51D489E8200DF9192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17352ED21D489F6F00DF9192 /* ICEWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEWebView.h; sourceTree = "<group>"; };
+		17352ED31D489F6F00DF9192 /* ICEWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEWebView.m; sourceTree = "<group>"; };
+		17352ED41D489F6F00DF9192 /* ICEWebView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ICEWebView.podspec; path = ../ICEWebView.podspec; sourceTree = "<group>"; };
+		17352ED51D489F6F00DF9192 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		17352ED61D489F6F00DF9192 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17352E981D489E8200DF9192 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17352EB11D489E8200DF9192 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17352EBC1D489E8200DF9192 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17352E921D489E8200DF9192 = {
+			isa = PBXGroup;
+			children = (
+				17352ED11D489F6F00DF9192 /* Classes */,
+				17352ED41D489F6F00DF9192 /* ICEWebView.podspec */,
+				17352ED51D489F6F00DF9192 /* LICENSE */,
+				17352ED61D489F6F00DF9192 /* README.md */,
+				17352E9D1D489E8200DF9192 /* ICEWebView */,
+				17352EB71D489E8200DF9192 /* ICEWebViewTests */,
+				17352EC21D489E8200DF9192 /* ICEWebViewUITests */,
+				17352E9C1D489E8200DF9192 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17352E9C1D489E8200DF9192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17352E9B1D489E8200DF9192 /* ICEWebView.app */,
+				17352EB41D489E8200DF9192 /* ICEWebViewTests.xctest */,
+				17352EBF1D489E8200DF9192 /* ICEWebViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17352E9D1D489E8200DF9192 /* ICEWebView */ = {
+			isa = PBXGroup;
+			children = (
+				17352EA11D489E8200DF9192 /* AppDelegate.h */,
+				17352EA21D489E8200DF9192 /* AppDelegate.m */,
+				17352EA41D489E8200DF9192 /* ViewController.h */,
+				17352EA51D489E8200DF9192 /* ViewController.m */,
+				17352EA71D489E8200DF9192 /* Main.storyboard */,
+				17352EAA1D489E8200DF9192 /* Assets.xcassets */,
+				17352EAC1D489E8200DF9192 /* LaunchScreen.storyboard */,
+				17352EAF1D489E8200DF9192 /* Info.plist */,
+				17352E9E1D489E8200DF9192 /* Supporting Files */,
+			);
+			path = ICEWebView;
+			sourceTree = "<group>";
+		};
+		17352E9E1D489E8200DF9192 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17352E9F1D489E8200DF9192 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17352EB71D489E8200DF9192 /* ICEWebViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				17352EB81D489E8200DF9192 /* ICEWebViewTests.m */,
+				17352EBA1D489E8200DF9192 /* Info.plist */,
+			);
+			path = ICEWebViewTests;
+			sourceTree = "<group>";
+		};
+		17352EC21D489E8200DF9192 /* ICEWebViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				17352EC31D489E8200DF9192 /* ICEWebViewUITests.m */,
+				17352EC51D489E8200DF9192 /* Info.plist */,
+			);
+			path = ICEWebViewUITests;
+			sourceTree = "<group>";
+		};
+		17352ED11D489F6F00DF9192 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				17352ED21D489F6F00DF9192 /* ICEWebView.h */,
+				17352ED31D489F6F00DF9192 /* ICEWebView.m */,
+			);
+			name = Classes;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17352E9A1D489E8200DF9192 /* ICEWebView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17352EC81D489E8200DF9192 /* Build configuration list for PBXNativeTarget "ICEWebView" */;
+			buildPhases = (
+				17352E971D489E8200DF9192 /* Sources */,
+				17352E981D489E8200DF9192 /* Frameworks */,
+				17352E991D489E8200DF9192 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ICEWebView;
+			productName = ICEWebView;
+			productReference = 17352E9B1D489E8200DF9192 /* ICEWebView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		17352EB31D489E8200DF9192 /* ICEWebViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17352ECB1D489E8200DF9192 /* Build configuration list for PBXNativeTarget "ICEWebViewTests" */;
+			buildPhases = (
+				17352EB01D489E8200DF9192 /* Sources */,
+				17352EB11D489E8200DF9192 /* Frameworks */,
+				17352EB21D489E8200DF9192 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17352EB61D489E8200DF9192 /* PBXTargetDependency */,
+			);
+			name = ICEWebViewTests;
+			productName = ICEWebViewTests;
+			productReference = 17352EB41D489E8200DF9192 /* ICEWebViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17352EBE1D489E8200DF9192 /* ICEWebViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17352ECE1D489E8200DF9192 /* Build configuration list for PBXNativeTarget "ICEWebViewUITests" */;
+			buildPhases = (
+				17352EBB1D489E8200DF9192 /* Sources */,
+				17352EBC1D489E8200DF9192 /* Frameworks */,
+				17352EBD1D489E8200DF9192 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17352EC11D489E8200DF9192 /* PBXTargetDependency */,
+			);
+			name = ICEWebViewUITests;
+			productName = ICEWebViewUITests;
+			productReference = 17352EBF1D489E8200DF9192 /* ICEWebViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17352E931D489E8200DF9192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = WLY;
+				TargetAttributes = {
+					17352E9A1D489E8200DF9192 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					17352EB31D489E8200DF9192 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 17352E9A1D489E8200DF9192;
+					};
+					17352EBE1D489E8200DF9192 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 17352E9A1D489E8200DF9192;
+					};
+				};
+			};
+			buildConfigurationList = 17352E961D489E8200DF9192 /* Build configuration list for PBXProject "ICEWebView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17352E921D489E8200DF9192;
+			productRefGroup = 17352E9C1D489E8200DF9192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17352E9A1D489E8200DF9192 /* ICEWebView */,
+				17352EB31D489E8200DF9192 /* ICEWebViewTests */,
+				17352EBE1D489E8200DF9192 /* ICEWebViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17352E991D489E8200DF9192 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17352ED81D489F6F00DF9192 /* ICEWebView.podspec in Resources */,
+				17352EAE1D489E8200DF9192 /* LaunchScreen.storyboard in Resources */,
+				17352EAB1D489E8200DF9192 /* Assets.xcassets in Resources */,
+				17352EA91D489E8200DF9192 /* Main.storyboard in Resources */,
+				17352ED91D489F6F00DF9192 /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17352EB21D489E8200DF9192 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17352EBD1D489E8200DF9192 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17352E971D489E8200DF9192 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17352EA61D489E8200DF9192 /* ViewController.m in Sources */,
+				17352ED71D489F6F00DF9192 /* ICEWebView.m in Sources */,
+				17352EDA1D489F6F00DF9192 /* README.md in Sources */,
+				17352EA31D489E8200DF9192 /* AppDelegate.m in Sources */,
+				17352EA01D489E8200DF9192 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17352EB01D489E8200DF9192 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17352EB91D489E8200DF9192 /* ICEWebViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17352EBB1D489E8200DF9192 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17352EC41D489E8200DF9192 /* ICEWebViewUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17352EB61D489E8200DF9192 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17352E9A1D489E8200DF9192 /* ICEWebView */;
+			targetProxy = 17352EB51D489E8200DF9192 /* PBXContainerItemProxy */;
+		};
+		17352EC11D489E8200DF9192 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17352E9A1D489E8200DF9192 /* ICEWebView */;
+			targetProxy = 17352EC01D489E8200DF9192 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		17352EA71D489E8200DF9192 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17352EA81D489E8200DF9192 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17352EAC1D489E8200DF9192 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17352EAD1D489E8200DF9192 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17352EC61D489E8200DF9192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17352EC71D489E8200DF9192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17352EC91D489E8200DF9192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ICEWebView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wly.ICEWebView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		17352ECA1D489E8200DF9192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ICEWebView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wly.ICEWebView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		17352ECC1D489E8200DF9192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ICEWebViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wly.ICEWebViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ICEWebView.app/ICEWebView";
+			};
+			name = Debug;
+		};
+		17352ECD1D489E8200DF9192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ICEWebViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wly.ICEWebViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ICEWebView.app/ICEWebView";
+			};
+			name = Release;
+		};
+		17352ECF1D489E8200DF9192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ICEWebViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wly.ICEWebViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ICEWebView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		17352ED01D489E8200DF9192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ICEWebViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wly.ICEWebViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ICEWebView;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17352E961D489E8200DF9192 /* Build configuration list for PBXProject "ICEWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17352EC61D489E8200DF9192 /* Debug */,
+				17352EC71D489E8200DF9192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17352EC81D489E8200DF9192 /* Build configuration list for PBXNativeTarget "ICEWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17352EC91D489E8200DF9192 /* Debug */,
+				17352ECA1D489E8200DF9192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17352ECB1D489E8200DF9192 /* Build configuration list for PBXNativeTarget "ICEWebViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17352ECC1D489E8200DF9192 /* Debug */,
+				17352ECD1D489E8200DF9192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17352ECE1D489E8200DF9192 /* Build configuration list for PBXNativeTarget "ICEWebViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17352ECF1D489E8200DF9192 /* Debug */,
+				17352ED01D489E8200DF9192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17352E931D489E8200DF9192 /* Project object */;
+}
