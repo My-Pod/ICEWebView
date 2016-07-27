@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "ICEWebView.h"
 @interface ViewController ()<ICEWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *reloadBtn;
+@property (nonatomic, strong) ICEWebView *webView;
 
 @end
 
@@ -16,15 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    ICEWebView *webView = [[ICEWebView alloc] initWithFrame:self.view.bounds];
-    [webView loadURLString:@"https://www.baidu.com/"];
-    webView.delegate = self;
-    [webView title:^(NSString *title) {
+    _webView = [[ICEWebView alloc] initWithFrame:self.view.bounds];
+    [_webView loadURLString:@"http://image.baidu.com/"];
+    _webView.delegate = self;
+    _webView.backgroundColor = [UIColor redColor];
+    [_webView title:^(NSString *title) {
         self.navigationController.title = title;
     }];
     
-    [self.view addSubview:webView];
+    [self.view addSubview:_webView];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)reload:(id)sender {
+    [_webView loadURLString:@"http://image.baidu.com/"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,11 +38,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)ice_webView:(ICEWebView *)webView didFailToLoadURL:(NSURL *)URL error:(NSError *)error{
-    NSLog(@"失败");
-}
-- (void)ice_webView:(ICEWebView *)webView didFinishLoadingURL:(NSURL *)URL{
-    NSLog(@"结束");
-}
+//- (void)ice_webView:(ICEWebView *)webView didFailToLoadURL:(NSURL *)URL error:(NSError *)error{
+//    NSLog(@"失败");
+//}
+//- (void)ice_webView:(ICEWebView *)webView didFinishLoadingURL:(NSURL *)URL{
+//    NSLog(@"结束");
+//}
 
 @end

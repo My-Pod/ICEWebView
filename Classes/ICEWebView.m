@@ -79,6 +79,16 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
 - (void)dealloc{
     _title = nil;
 }
+- (void)setBackgroundColor:(UIColor *)backgroundColor{
+    [super setBackgroundColor:backgroundColor];
+    if (_wkWebView) {
+        _wkWebView.scrollView.backgroundColor = backgroundColor;
+    }else{
+        _uiWebView.backgroundColor = backgroundColor;
+        _uiWebView.opaque = NO;
+    }
+}
+
 
 #pragma mark - Public Interface
 - (void)loadRequest:(NSURLRequest *)request {

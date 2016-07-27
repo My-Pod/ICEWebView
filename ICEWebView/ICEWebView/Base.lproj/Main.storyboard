@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plo-Nu-KEw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="plo-Nu-KEw">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="eyQ-Ez-hcB">
+            <objects>
+                <viewController id="AYk-kS-EVD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="57K-Rx-UTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="luF-L9-lNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O8C-1P-WYL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAg-Yf-jdJ">
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.76944225164546909" green="0.92834956514782174" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8DG-7N-AcO"/>
+                                    <constraint firstAttribute="height" constant="30" id="it9-n6-xSM"/>
+                                </constraints>
+                                <state key="normal" title="百度一下"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="x54-rm-XgN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TAg-Yf-jdJ" firstAttribute="centerY" secondItem="O8C-1P-WYL" secondAttribute="centerY" id="fbf-g6-mkl"/>
+                            <constraint firstItem="TAg-Yf-jdJ" firstAttribute="centerX" secondItem="O8C-1P-WYL" secondAttribute="centerX" id="hxW-88-c2G"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HZm-Tk-qy5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jc-Wh-zgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1379" y="399"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,13 +53,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTZ-mz-dba">
+                                <rect key="frame" x="212" y="274" width="125" height="30"/>
+                                <state key="normal" title="重新加载"/>
+                                <connections>
+                                    <action selector="reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhc-vx-6G0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="MXN-mJ-W7V"/>
+                    <connections>
+                        <outlet property="reloadBtn" destination="JTZ-mz-dba" id="Qy4-f1-Mc0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="387"/>
+            <point key="canvasLocation" x="2073" y="388"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NrK-qs-lbG">
@@ -35,7 +84,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7PN-DB-8wS"/>
+                        <segue destination="AYk-kS-EVD" kind="relationship" relationship="rootViewController" id="iCK-E1-MpL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VT6-zB-FKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
