@@ -15,10 +15,10 @@
 		17352EAE1D489E8200DF9192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17352EAC1D489E8200DF9192 /* LaunchScreen.storyboard */; };
 		17352EB91D489E8200DF9192 /* ICEWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352EB81D489E8200DF9192 /* ICEWebViewTests.m */; };
 		17352EC41D489E8200DF9192 /* ICEWebViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352EC31D489E8200DF9192 /* ICEWebViewUITests.m */; };
-		17352ED71D489F6F00DF9192 /* ICEWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17352ED31D489F6F00DF9192 /* ICEWebView.m */; };
 		17352ED81D489F6F00DF9192 /* ICEWebView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 17352ED41D489F6F00DF9192 /* ICEWebView.podspec */; };
 		17352ED91D489F6F00DF9192 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 17352ED51D489F6F00DF9192 /* LICENSE */; };
 		17352EDA1D489F6F00DF9192 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 17352ED61D489F6F00DF9192 /* README.md */; };
+		17D87DD21D50359300CB5DCE /* ICEWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D87DD11D50359300CB5DCE /* ICEWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +55,11 @@
 		17352EBF1D489E8200DF9192 /* ICEWebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICEWebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17352EC31D489E8200DF9192 /* ICEWebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICEWebViewUITests.m; sourceTree = "<group>"; };
 		17352EC51D489E8200DF9192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17352ED21D489F6F00DF9192 /* ICEWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEWebView.h; sourceTree = "<group>"; };
-		17352ED31D489F6F00DF9192 /* ICEWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEWebView.m; sourceTree = "<group>"; };
 		17352ED41D489F6F00DF9192 /* ICEWebView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ICEWebView.podspec; path = ../ICEWebView.podspec; sourceTree = "<group>"; };
 		17352ED51D489F6F00DF9192 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		17352ED61D489F6F00DF9192 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		17D87DD01D50359300CB5DCE /* ICEWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEWebView.h; sourceTree = "<group>"; };
+		17D87DD11D50359300CB5DCE /* ICEWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +156,8 @@
 		17352ED11D489F6F00DF9192 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				17352ED21D489F6F00DF9192 /* ICEWebView.h */,
-				17352ED31D489F6F00DF9192 /* ICEWebView.m */,
+				17D87DD01D50359300CB5DCE /* ICEWebView.h */,
+				17D87DD11D50359300CB5DCE /* ICEWebView.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -296,10 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				17352EA61D489E8200DF9192 /* ViewController.m in Sources */,
-				17352ED71D489F6F00DF9192 /* ICEWebView.m in Sources */,
 				17352EDA1D489F6F00DF9192 /* README.md in Sources */,
 				17352EA31D489E8200DF9192 /* AppDelegate.m in Sources */,
 				17352EA01D489E8200DF9192 /* main.m in Sources */,
+				17D87DD21D50359300CB5DCE /* ICEWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

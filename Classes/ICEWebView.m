@@ -1,42 +1,56 @@
 //
-//  WLYWebView.m
-//  WLYWebView
+//  ZLCWebView.m
+//  测试
 //
-//  Created by WLY on 16/7/26.
-//  Copyright © 2016年 WLY. All rights reserved.
+//  Created by shining3d on 16/6/17.
+//  Copyright © 2016年 shining3d. All rights reserved.
 //
 
 #import "ICEWebView.h"
-#import <WebKit/WKWebView.h>
 
-static void *ICEWebBrowserContext = &ICEWebBrowserContext;
+#define isiOS8 [[[UIDevice currentDevice] systemVersion] floatValue]>=8.0
+
+static void *ZLCWebBrowserContext = &ZLCWebBrowserContext;
 
 
-@interface ICEWebView ()<WKNavigationDelegate , WKUIDelegate, UIWebViewDelegate>
+@interface ICEWebView ()<UIAlertViewDelegate>  
 @property (nonatomic, strong) NSTimer *fakeProgressTimer;
 @property (nonatomic, assign) BOOL uiWebViewIsLoading;
 @property (nonatomic, strong) NSURL *uiWebViewCurrentURL;
 @property (nonatomic, strong) NSURL *URLToLaunchWithPermission;
-// The main and only UIProgressView
-@property (nonatomic, strong) UIProgressView *progressView;
+//@property (nonatomic, strong) UIAlertView *externalAppPermissionAlertView;
 @property (nonatomic, copy) void (^title) (NSString *title);
 
+
 @end
+
+
 
 @implementation ICEWebView
 
 
-- (instancetype)initWithFrame:(CGRect)frame{
-    self  = [super initWithFrame:frame];
+
+
+#pragma mark --Initializers
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
     if (self) {
         
-        if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0) {
-            _wkWebView = [[WKWebView alloc] init];
-        }else{
-            _uiWebView = [[UIWebView alloc] init];
+        
+        if(isiOS8) {
+            
+            self.wkWebView = [[WKWebView alloc] init];
+            
+        }
+        else {
+            self.uiWebView = [[UIWebView alloc] init];
         }
         
-        if(_wkWebView) {
+        
+        self.backgroundColor = [UIColor redColor];
+        
+        if(self.wkWebView) {
             [self.wkWebView setFrame:frame];
             [self.wkWebView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
             [self.wkWebView setNavigationDelegate:self];
@@ -44,50 +58,39 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
             [self.wkWebView setMultipleTouchEnabled:YES];
             [self.wkWebView setAutoresizesSubviews:YES];
             [self.wkWebView.scrollView setAlwaysBounceVertical:YES];
-            
             [self addSubview:self.wkWebView];
             self.wkWebView.scrollView.bounces = NO;
-            [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:ICEWebBrowserContext];
+            [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:ZLCWebBrowserContext];
         }
         else  {
-            
             [self.uiWebView setFrame:frame];
             [self.uiWebView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
             [self.uiWebView setDelegate:self];
             [self.uiWebView setMultipleTouchEnabled:YES];
             [self.uiWebView setAutoresizesSubviews:YES];
             [self.uiWebView setScalesPageToFit:YES];
-            [self.uiWebView.scrollView setAlwaysBounceVertical:NO];
+            [self.uiWebView.scrollView setAlwaysBounceVertical:YES];
             self.uiWebView.scrollView.bounces = NO;
             [self addSubview:self.uiWebView];
         }
         
         
-        _progress_y = 64;
+        
+        
+        
         self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         [self.progressView setTrackTintColor:[UIColor colorWithWhite:1.0f alpha:0.0f]];
-        [self.progressView setFrame:CGRectMake(0, _progress_y, self.frame.size.width, self.progressView.frame.size.height)];
+        [self.progressView setFrame:CGRectMake(0, 64, self.frame.size.width, self.progressView.frame.size.height)];
         
         //设置进度条颜色
         [self setTintColor:[UIColor colorWithRed:0.400 green:0.863 blue:0.133 alpha:1.000]];
         [self addSubview:self.progressView];
-
+        
+        
     }
     return self;
 }
 
-- (void)dealloc{
-    _title = nil;
-}
-- (void)setBackgroundColor:(UIColor *)backgroundColor{
-    [super setBackgroundColor:backgroundColor];
-    if (_wkWebView) {
-        _wkWebView.scrollView.backgroundColor = backgroundColor;
-    }else{
-        _uiWebView.backgroundColor = backgroundColor;
-        _uiWebView.opaque = NO;
-    }
-}
 
 
 #pragma mark - Public Interface
@@ -97,9 +100,7 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
     }
     else  {
         [self.uiWebView loadRequest:request];
-    }
-    
-    for (int i = 0 ; i ; i ++) {
+        
         
     }
 }
@@ -122,12 +123,7 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
     }
 }
 
-- (void)setProgress_y:(CGFloat)progress_y{
-    _progress_y = progress_y;
-    CGRect frame = self.progressView.frame;
-    frame.origin.y = progress_y;
-    self.progressView.frame = frame;
-}
+
 
 - (void)setTintColor:(UIColor *)tintColor {
     _tintColor = tintColor;
@@ -138,11 +134,192 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
     _barTintColor = barTintColor;
 }
 
-
 - (void)title:(void (^)(NSString *))title{
     self.title = title;
 }
 
+- (void)setProgress_y:(CGFloat)progress_y{
+    _progress_y = progress_y;
+    CGRect frame = self.progressView.frame;
+    frame.origin.y = progress_y;
+    self.progressView.frame = frame;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor{
+    [super setBackgroundColor:backgroundColor];
+    if (_wkWebView) {
+        _wkWebView.scrollView.backgroundColor = backgroundColor;
+    }else{
+        _uiWebView.backgroundColor = backgroundColor;
+        _uiWebView.opaque = NO;
+    }
+}
+
+
+#pragma mark - UIWebViewDelegate
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    if(webView == self.uiWebView) {
+        [self.delegate ice_webViewDidStartLoad:self];
+        
+    }
+}
+
+//监视请求
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+	
+    if(webView == self.uiWebView) {
+        
+        if(![self externalAppRequiredToOpenURL:request.URL]) {
+            self.uiWebViewCurrentURL = request.URL;
+            self.uiWebViewIsLoading = YES;
+            
+            [self fakeProgressViewStartLoading];
+            
+            
+            //back delegate
+            [self.delegate ice_webView:self shouldStartLoadWithURL:request.URL];
+            return YES;
+        }
+        else {
+//            [self launchExternalAppWithURL:request.URL];
+            return NO;
+        }
+    }
+    return NO;
+}
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    
+    if(webView == self.uiWebView) {
+        if(!self.uiWebView.isLoading) {
+            self.uiWebViewIsLoading = NO;
+            
+            [self fakeProgressBarStopLoading];
+        }
+        
+        //back delegate
+        [self.delegate ice_webView:self didFinishLoadingURL:self.uiWebView.request.URL];
+        
+    }
+    
+    if (self.title) {
+        self.title([webView stringByEvaluatingJavaScriptFromString:@"document.title"]);
+    }
+
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+    if(webView == self.uiWebView) {
+        if(!self.uiWebView.isLoading) {
+            self.uiWebViewIsLoading = NO;
+            
+            [self fakeProgressBarStopLoading];
+        }
+        
+        //back delegate
+        [self.delegate ice_webView:self didFailToLoadURL:self.uiWebView.request.URL error:error];
+    }
+}
+
+
+#pragma mark - WKNavigationDelegate
+
+
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    if(webView == self.wkWebView) {
+        
+         
+        
+        
+        //back delegate
+        [self.delegate ice_webViewDidStartLoad:self];
+        
+        
+        //        WKNavigationActionPolicy(WKNavigationActionPolicyAllow);
+        
+    }
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+	
+    if(webView == self.wkWebView) {
+        
+        //back delegate
+        [self.delegate ice_webView:self didFinishLoadingURL:self.wkWebView.URL];
+    }
+    if (self.title) {
+        self.title(webView.title);
+    }
+
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation
+      withError:(NSError *)error {
+    if(webView == self.wkWebView) {
+        //back delegate
+        [self.delegate ice_webView:self didFailToLoadURL:self.wkWebView.URL error:error];
+    }
+    
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation
+      withError:(NSError *)error {
+    if(webView == self.wkWebView) {
+        //back delegate
+        [self.delegate ice_webView:self didFailToLoadURL:self.wkWebView.URL error:error];
+    }
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    
+    
+    if(webView == self.wkWebView) {
+        
+        NSURL *URL = navigationAction.request.URL;
+        if(![self externalAppRequiredToOpenURL:URL]) {
+            if(!navigationAction.targetFrame) {
+                [self loadURL:URL];
+                decisionHandler(WKNavigationActionPolicyCancel);
+                return;
+            }
+            [self callback_webViewShouldStartLoadWithRequest:navigationAction.request navigationType:navigationAction.navigationType];
+            
+        }
+        else if([[UIApplication sharedApplication] canOpenURL:URL]) {
+//            [self launchExternalAppWithURL:URL];
+            decisionHandler(WKNavigationActionPolicyCancel);
+            return;
+        }
+    }
+    
+    
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
+    
+    
+}
+
+-(BOOL)callback_webViewShouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(NSInteger)navigationType
+{
+    //back delegate
+    [self.delegate ice_webView:self shouldStartLoadWithURL:request.URL];
+    return YES;
+}
+
+
+#pragma mark - WKUIDelegate
+
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
+}
 #pragma mark - Estimated Progress KVO (WKWebView)
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -165,80 +342,6 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
     }
 }
 
-#pragma mark - WKWebView
-
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    if (webView == _wkWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_WebViewDidStartLoad:)]) {
-            [self.delegate ice_WebViewDidStartLoad:self];
-        }
-    }
-}
-
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    if (webView == _wkWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_webView:didFinishLoadingURL:)]) {
-            [self.delegate ice_webView:self didFinishLoadingURL:_wkWebView.URL];
-        }
-    }
-    if (self.title) {
-        self.title(webView.title);
-    }
-}
-
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    if (webView == _wkWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_webView:didFailToLoadURL:error:)]) {
-            [self.delegate ice_webView:self didFailToLoadURL:_wkWebView.URL error:error];
-        }
-    }
-}
-
-- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
-    if (webView == _wkWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_webView:didFailToLoadURL:error:)]) {
-            [self.delegate ice_webView:self didFailToLoadURL:_wkWebView.URL error:error];
-        }
-    }
-}
-
-
-
-
-
-#pragma mark - UIWebViewDelegate
-- (void)webViewDidStartLoad:(UIWebView *)webView{
-    if (webView == _uiWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_WebViewDidStartLoad:)]) {
-            [self.delegate ice_WebViewDidStartLoad:self];
-        }
-    }
-    [self fakeProgressViewStartLoading];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    if (webView == _uiWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_webView:didFinishLoadingURL:)]) {
-            [self.delegate ice_webView:self didFinishLoadingURL:webView.request.URL];
-        }
-    }
-    
-    [self fakeProgressBarStopLoading];
-    
-    if (self.title) {
-        self.title([webView stringByEvaluatingJavaScriptFromString:@"document.title"]);
-    }
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    if (webView == _uiWebView) {
-        if ([self.delegate respondsToSelector:@selector(ice_webView:didFailToLoadURL:error:)]) {
-            [self.delegate ice_webView:self didFailToLoadURL:webView.request.URL error:error];
-        }
-    }
-    [self fakeProgressBarStopLoading];
-}
-
 #pragma mark - Fake Progress Bar Control (UIWebView)
 
 - (void)fakeProgressViewStartLoading {
@@ -248,7 +351,6 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
     if(!self.fakeProgressTimer) {
         self.fakeProgressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f/60.0f target:self selector:@selector(fakeProgressTimerDidFire:) userInfo:nil repeats:YES];
     }
-    
 }
 
 - (void)fakeProgressBarStopLoading {
@@ -276,6 +378,43 @@ static void *ICEWebBrowserContext = &ICEWebBrowserContext;
     }
 }
 
+#pragma mark - External App Support
+- (BOOL)externalAppRequiredToOpenURL:(NSURL *)URL {
+	
+	//若需要限制只允许某些前缀的scheme通过请求，则取消下述注释，并在数组内添加自己需要放行的前缀
+//    NSSet *validSchemes = [NSSet setWithArray:@[@"http", @"https",@"file"]];
+//    return ![validSchemes containsObject:URL.scheme];
+	
+	return !URL;
+}
+//
+//- (void)launchExternalAppWithURL:(NSURL *)URL {
+//    self.URLToLaunchWithPermission = URL;
+//    if (![self.externalAppPermissionAlertView isVisible]) {
+//        [self.externalAppPermissionAlertView show];
+//    }
+//    
+//}
 
+#pragma mark - UIAlertViewDelegate
+
+//- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+//    if(alertView == self.externalAppPermissionAlertView) {
+//        if(buttonIndex != alertView.cancelButtonIndex) {
+//            [[UIApplication sharedApplication] openURL:self.URLToLaunchWithPermission];
+//        }
+//        self.URLToLaunchWithPermission = nil;
+//    }
+//}
+
+#pragma mark - Dealloc
+
+- (void)dealloc {
+    [self.uiWebView setDelegate:nil];
+    [self.wkWebView setNavigationDelegate:nil];
+    [self.wkWebView setUIDelegate:nil];
+    [self.wkWebView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
+    _title = nil;
+}
 
 @end
