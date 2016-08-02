@@ -51,7 +51,7 @@ static void *ZLCWebBrowserContext = &ZLCWebBrowserContext;
         self.backgroundColor = [UIColor redColor];
         
         if(self.wkWebView) {
-            [self.wkWebView setFrame:frame];
+            [self.wkWebView setFrame:self.bounds];
             [self.wkWebView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
             [self.wkWebView setNavigationDelegate:self];
             [self.wkWebView setUIDelegate:self];
@@ -63,7 +63,7 @@ static void *ZLCWebBrowserContext = &ZLCWebBrowserContext;
             [self.wkWebView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:0 context:ZLCWebBrowserContext];
         }
         else  {
-            [self.uiWebView setFrame:frame];
+            [self.uiWebView setFrame:self.bounds];
             [self.uiWebView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
             [self.uiWebView setDelegate:self];
             [self.uiWebView setMultipleTouchEnabled:YES];
@@ -80,7 +80,7 @@ static void *ZLCWebBrowserContext = &ZLCWebBrowserContext;
         
         self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         [self.progressView setTrackTintColor:[UIColor colorWithWhite:1.0f alpha:0.0f]];
-        [self.progressView setFrame:CGRectMake(0, 64, self.frame.size.width, self.progressView.frame.size.height)];
+        [self.progressView setFrame:CGRectMake(0, 0, self.frame.size.width, self.progressView.frame.size.height)];
         
         //设置进度条颜色
         [self setTintColor:[UIColor colorWithRed:0.400 green:0.863 blue:0.133 alpha:1.000]];
